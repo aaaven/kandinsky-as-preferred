@@ -1,0 +1,149 @@
+Fast lora
+
+model_train_type = "sd-lora"
+pretrained_model_name_or_path = "C:/tools/lora-scripts-v1.8.5/sd-models/v1-5-pruned-emaonly.safetensors"
+v2 = false
+train_data_dir = "./train/fast lora"
+reg_data_dir = "./reg"
+prior_loss_weight = 1
+resolution = "512,512"
+enable_bucket = true
+min_bucket_reso = 256
+max_bucket_reso = 1024
+bucket_reso_steps = 64
+output_name = "fast_lora"
+output_dir = "./output"
+save_model_as = "safetensors"
+save_precision = "fp16"
+save_every_n_epochs = 2
+max_train_epochs = 10
+train_batch_size = 2
+gradient_checkpointing = false
+network_train_unet_only = false
+network_train_text_encoder_only = false
+learning_rate = 0.0001
+unet_lr = 0.0001
+text_encoder_lr = 0.00001
+lr_scheduler = "cosine_with_restarts"
+lr_warmup_steps = 0
+lr_scheduler_num_cycles = 1
+optimizer_type = "AdamW8bit"
+network_module = "lycoris.kohya"
+network_dim = 64
+network_alpha = 32
+log_with = "tensorboard"
+logging_dir = "./logs"
+caption_extension = ".txt"
+shuffle_caption = true
+keep_tokens = 0
+max_token_length = 255
+seed = 1337
+clip_skip = 2
+mixed_precision = "fp16"
+xformers = true
+lowram = false
+cache_latents = true
+cache_latents_to_disk = true
+persistent_data_loader_workers = true
+network_args = [ "conv_dim=4", "conv_alpha=1", "dropout=0", "algo=locon" ]
+
+
+DiffLoRA
+
+Step1
+
+model_train_type = "sd-lora"
+pretrained_model_name_or_path = "C:/tools/lora-scripts-v1.8.5/sd-models/v1-5-pruned-emaonly.safetensors"
+v2 = false
+train_data_dir = "./train/DiffLora_base"
+prior_loss_weight = 1
+resolution = "512,512"
+enable_bucket = true
+min_bucket_reso = 256
+max_bucket_reso = 1024
+bucket_reso_steps = 64
+output_name = "DiffLora_base"
+output_dir = "./output"
+save_model_as = "safetensors"
+save_precision = "fp16"
+save_every_n_epochs = 2
+max_train_epochs = 10
+train_batch_size = 2
+gradient_checkpointing = false
+network_train_unet_only = true
+network_train_text_encoder_only = false
+learning_rate = 0.0001
+unet_lr = 0.0001
+text_encoder_lr = 0.00001
+lr_scheduler = "cosine_with_restarts"
+lr_warmup_steps = 0
+lr_scheduler_num_cycles = 1
+optimizer_type = "Lion"
+network_module = "lycoris.kohya"
+network_dim = 64
+network_alpha = 32
+log_with = "tensorboard"
+logging_dir = "./logs"
+caption_extension = ".txt"
+shuffle_caption = true
+keep_tokens = 0
+max_token_length = 255
+seed = 1337
+clip_skip = 2
+mixed_precision = "fp16"
+xformers = true
+lowram = false
+cache_latents = true
+cache_latents_to_disk = true
+persistent_data_loader_workers = true
+network_args = [ "conv_dim=4", "conv_alpha=1", "dropout=0", "algo=locon" ]
+
+Step2
+
+model_train_type = "sd-lora"
+pretrained_model_name_or_path = "C:/tools/lora-scripts-v1.8.5/sd-models/v1-5-pruned-emaonly.safetensors"
+v2 = false
+train_data_dir = "./train/DiffLora_change"
+prior_loss_weight = 1
+resolution = "512,512"
+enable_bucket = true
+min_bucket_reso = 256
+max_bucket_reso = 1024
+bucket_reso_steps = 64
+output_name = "DiffLora"
+output_dir = "./output"
+save_model_as = "safetensors"
+save_precision = "fp16"
+save_every_n_epochs = 2
+max_train_epochs = 10
+train_batch_size = 2
+gradient_checkpointing = false
+network_train_unet_only = true
+network_train_text_encoder_only = false
+learning_rate = 0.0001
+unet_lr = 0.0001
+text_encoder_lr = 0.00001
+lr_scheduler = "cosine_with_restarts"
+lr_warmup_steps = 0
+lr_scheduler_num_cycles = 1
+optimizer_type = "AdamW8bit"
+network_module = "lycoris.kohya"
+network_dim = 64
+network_alpha = 32
+base_weights = [ "/output/DiffLora_base" ]
+base_weights_multiplier = [ 1 ]
+log_with = "tensorboard"
+logging_dir = "./logs"
+caption_extension = ".txt"
+shuffle_caption = true
+keep_tokens = 0
+max_token_length = 255
+seed = 1337
+clip_skip = 2
+mixed_precision = "fp16"
+xformers = true
+lowram = false
+cache_latents = true
+cache_latents_to_disk = true
+persistent_data_loader_workers = true
+network_args = [ "conv_dim=4", "conv_alpha=1", "dropout=0", "algo=locon" ]
