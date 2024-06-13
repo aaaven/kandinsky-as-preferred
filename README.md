@@ -4,8 +4,8 @@
 
 ### Inference the Artist Model
 
-In ./lora_models are our fine-tuned models (we termed it as "artist model" through our "semantic injection" process) with the Kandinsky dataset (in ./dataset). We applied two methods for the "semantic injection," including fastLora for attributes with discrete values such as shapes and diffLora for attributes with continuous values (such as color brightness and composition-relevant attributes). To inference the Artist Model, place the lora models in the root folder of stable diffusion webui such as /models/lora, then ready to go!
+In ./lora_models are our fine-tuned models (we termed it as "artist model" through our "semantic injection" process) with the Kandinsky dataset (in ./dataset). We applied two methods for the "semantic injection," including fastLora for attributes with discrete values such as shapes and diffLora for attributes with continuous values (such as color brightness and composition-relevant attributes). To inference the Artist Model, place the lora models in the root folder of stable diffusion webui such as /models/lora, then it's ready to go!
 
-
+![Screenshot](./imgs/eg.jpg)
 
 
