@@ -11,7 +11,7 @@ In ./lora_models are our fine-tuned models (we termed it as "artist model" throu
 
 ### Prompting-free Experience with Genetic Optimization
 
-![diagram](./imgs/flowchart.pdf)
+![diagram](./imgs/flowchart.jpg)
 
 
 GeneticKandinsky_2024.ipynb implements a genetic algorithm automatically assembles keywords and descriptions (attribute value sets in our research) of Kandinsky's art as prompts based on Kandinsky's art theory. The user votes for preferred generative results till satisfied, the prompting model will be optimized based on the preference input.  
