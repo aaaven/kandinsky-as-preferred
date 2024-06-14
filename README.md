@@ -8,11 +8,11 @@ In ./lora_models are our fine-tuned models (we termed it as "artist model" throu
 
 To inference our Artist Model, move all the lora models (without their parent folders) to the root folder of stable diffusion webui such as SD-root/models/lora, then it's ready to go! If the Lora model is successfully loaded, it should look like this.
 
-![Screenshot](./imgs/1.png)
+![Screenshot](./imgs/2.png)
 
 Prompting with the Kandinsky keywords:
 
-![Screenshot](./imgs/2.png)
+![Screenshot](./imgs/1.png)
 
 ### Prompting-free Experience with Genetic Optimization
 
