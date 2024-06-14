@@ -8,7 +8,7 @@ In ./lora_models are our fine-tuned models (we termed it as "artist model" throu
 
 We use [Stable Diffusion v1-5](https://huggingface.co/runwayml/stable-diffusion-v1-5) as the base model and our fine-tuned LORA models together in webui. To inference our Artist Model, move all the LORA models (without their parent folders) to the root folder of stable diffusion webui such as SD-root/models/LORA, then it's ready to go! If the Lora model is successfully loaded, it should look like this.
 
-![Screenshot](./imgs/2.png)
+![Screenshot](imgs/2.png)
 
 <!-- https://github.com/0xbitches/sd-webui-lcm -->
 
@@ -16,16 +16,16 @@ We use [Stable Diffusion v1-5](https://huggingface.co/runwayml/stable-diffusion-
 
 Prompting with the Kandinsky keywords:
 
-![Screenshot](./imgs/3.jpg)
+![Screenshot](imgs/3.jpg)
 
 It also works with [LCM sampler](https://huggingface.co/latent-consistency/lcm-lora-sdv1-5/blob/main/pytorch_lora_weights.safetensors). When generating in 8 steps, the inference is significantly faster.  
 
-![Screenshot](./imgs/4.jpg)
+![Screenshot](imgs/4.jpg)
 
 ### Prompting-free Experience with Genetic Optimization
 
 GeneticKandinsky_2024.ipynb implements a genetic algorithm that automatically assembles keywords and descriptions (attribute value sets in our research) of Kandinsky's art as prompts based on Kandinsky's art theory. The user votes for preferred generative results till satisfied, the prompting model will be optimized based on the preference input.  
 
-![diagram](./imgs/flowchart.jpg)
+![diagram](imgs/flowchart.jpg)
 
 We use sd-webui as the text2image function and api, the user votes to update and optimize the genetic prompting function in real-time and eventually obtain the prompting-free yet satisfying experience of using large text-to-image to generate visual art.
